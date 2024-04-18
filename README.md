@@ -1,7 +1,7 @@
 # bulls-and-cows-game
 It is a code-breaking game.
 
-# How to Play:
+# How to Play
 
 1. The computer will come up with a 4-digit number without repetition of digits.
 2. The player guesses a number.
