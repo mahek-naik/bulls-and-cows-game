@@ -14,5 +14,3 @@ def generate_rand_num():
         number = (number * 10) + digit
         
     return number
-
-print(generate_rand_num())

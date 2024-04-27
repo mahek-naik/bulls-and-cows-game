@@ -28,23 +28,29 @@ lbl_bulls.grid(row=1, column=1, padx=10, pady=10)
 
 lbl_cows = tk.Label(top_frame, text = "Cow(s)")
 lbl_cows.grid(row=1, column=2, padx=10, pady=10)
- 
+
+# 4-digit number generation upon clicking on 'Start' 
+def generate_num():
+    btn_check["text"] = "Check" # Change the text on the button
+    btn_check.configure(command = add_entry)
+    add_entry()
+
 # Create a new entry for each guess
-my_entries = []
+ent_num_entries = []
 count = 0 # to keep track of inserted entries
 row_counter = 3
 def add_entry():
     global count
     global row_counter
-    MAX_NUM = 10 #maximum numbers of entries
+    MAX_NUM = 9 #maximum numbers of entries - 1 
     if count <= MAX_NUM:
-        my_entries.append(tk.Entry(top_frame))
-        my_entries[-1].grid(row = row_counter, column = 0)
+        ent_num_entries.append(tk.Entry(top_frame))
+        ent_num_entries[-1].grid(row = row_counter, column = 0)
         count +=1
         row_counter +=1
 
 # Content in bottom_frame
-btn_check = tk.Button(bottom_frame, text = "Check", command = add_entry)
+btn_check = tk.Button(bottom_frame, text = "Start", command = generate_num)
 btn_check.grid(row=0, column=0, padx=10, pady=10)
 
 window.mainloop()
